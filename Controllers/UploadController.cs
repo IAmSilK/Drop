@@ -1,11 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.CompilerServices;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Drop.Controllers
 {
