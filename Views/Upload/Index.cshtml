@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <strong>Error!</strong> @ViewData.ModelState["Error"].Errors.First().ErrorMessage
+        </div>
+    }
+    <div>
+        This site is used by its owner to upload text and files for later use. Upload at your own risk.
+    </div>
+    <form method="POST" asp-controller="Upload" asp-action="Submit" enctype="multipart/form-data">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"/>
+        <br/>
+        <textarea name="text" style="width: 75%" placeholder="Upload text"></textarea>
+        <br/>
+        or upload files
+        <input type="file" name="files" multiple/>
+        <br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
