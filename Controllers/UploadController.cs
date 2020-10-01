@@ -85,7 +85,7 @@ namespace Drop.Controllers
         [HttpPost]
         public async Task<IActionResult> Submit(string password, string text, IFormFileCollection files)
         {
-            if (password != "stephen")
+            if (password != _configuration["UploadPassword"])
             {
                 return RedirectToAction("Index", new { error = "Bad password" });
             }
