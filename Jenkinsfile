@@ -24,7 +24,9 @@ node {
 
             # Create and start drop-webapp container
             docker run -d \
-                -p 5000:5000 -p 5001:5001 \
+                -p 5000:80 \
+                -e ASPNETCORE_ENVIRONMENT=Production \
+                -e DOTNET_PRINT_TELEMETRY_MESSAGE=false \
                 -v drop-webapp:/data \
                 --name drop-webapp \
                 drop-webapp:latest
