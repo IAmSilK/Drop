@@ -8,6 +8,6 @@ COPY . .
 RUN dotnet publish Drop -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
-WORKDIR /data
+WORKDIR /app
 COPY --from=build /app/publish /app
 ENTRYPOINT ["dotnet", "/app/Drop.dll"]

@@ -27,7 +27,7 @@ node {
                 -p 5000:80 \
                 -e ASPNETCORE_ENVIRONMENT=Production \
                 -e DOTNET_PRINT_TELEMETRY_MESSAGE=false \
-                -v drop-webapp:/data \
+                -v drop-webapp:/uploads \
                 --name drop-webapp \
                 drop-webapp:latest
         '''
