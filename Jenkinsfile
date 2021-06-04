@@ -22,7 +22,7 @@ node {
             # Remove drop-webapp docker if it exists
             docker ps -a -q --filter "name=drop-webapp" | grep -q . && docker rm -fv drop-webapp
 
-            # Create and start nbcovidbot container
+            # Create and start drop-webapp container
             docker run -d \
                 -p 5000:5000 -p 5001:5001
                 -v drop-webapp:/data \
